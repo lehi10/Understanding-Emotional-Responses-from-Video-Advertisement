@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+
+    tools:context="com.example.myapplication.VideoPlayerActivity">
+
+
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtubePlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:id="@+id/infoLayaout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/youtubePlayerView"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="RESULTS"
+            android:textSize="25dp"/>
+
+        <GridLayout
+            android:columnCount="2"
+            android:rowCount="3"
+
+            android:columnOrderPreserved="true"
+            android:layout_weight="3"
+
+            android:layout_width="wrap_content"
+            android:layout_height="0dp">
+            
+            <LinearLayout>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Average :"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+            <LinearLayout>
+                <TextView
+                    android:id="@+id/averageRes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+
+            <LinearLayout>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Std Deviation :"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+            <LinearLayout>
+                <TextView
+                    android:id="@+id/stdDeviationRes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+
+
+
+
+        </GridLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+
+        android:layout_above="@+id/resultLayout"
+        >
+
+
+        <com.wonderkiln.camerakit.CameraView
+            android:id="@+id/camera_view"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true">
+        </com.wonderkiln.camerakit.CameraView>
+
+
+
+        <com.example.myapplication.Helper.GraphicOverlay
+            android:id="@+id/graphics_overlay"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true">
+
+        </com.example.myapplication.Helper.GraphicOverlay>
+
+
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/resultLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/buttonPlay"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Emotional Response: "
+            android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/textView_emotionalResp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@android:color/white"
+            />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Play"
+        android:layout_alignParentBottom="true"
+        />
+
+
+
+</RelativeLayout>
+
